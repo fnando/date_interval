@@ -1,5 +1,8 @@
 # DateInterval
 
+[![Build Status](https://travis-ci.org/fnando/date_interval.png?branch=master)](https://travis-ci.org/fnando/date_interval)
+[![Code Climate](https://codeclimate.com/github/fnando/date_interval.png)](https://codeclimate.com/github/fnando/date_interval)
+
 Parse date intervals from strings.
 
 ## Installation
