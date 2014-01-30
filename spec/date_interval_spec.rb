@@ -3,7 +3,14 @@ require "spec_helper"
 describe DateInterval do
   it "parses the interval" do
     interval = DateInterval.parse("2014-01-01 - 2014-01-05")
-    expected_interval = (Date.parse("2014-01-01")..Date.parse("2014-01-05")).to_a
+    expected_interval = date_range("2014-01-01", "2014-01-05")
+
+    expect(interval).to eql(expected_interval)
+  end
+
+  it "parses multiple intervals" do
+    interval = DateInterval.parse("2014-01-01 - 2014-01-05, 2014-01-06 - 2014-01-10")
+    expected_interval = date_range("2014-01-01", "2014-01-10")
 
     expect(interval).to eql(expected_interval)
   end
