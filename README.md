@@ -24,6 +24,8 @@ Or install it yourself as:
 You must always define at least one range at the beginning of the expression. The snippet below will return three dates objects.
 
 ```ruby
+require "date_interval"
+
 expr = "2014-01-01 - 2014-01-03"
 dates = DateInterval.parse(expr)
 ```
@@ -31,6 +33,8 @@ dates = DateInterval.parse(expr)
 You can provide as many intervals as you want. The following expression returns six date objects.
 
 ```ruby
+require "date_interval"
+
 expr = "2014-01-01 - 2014-01-03, 2014-02-01 - 2014-02-03"
 dates = DateInterval.parse(expr)
 ```
