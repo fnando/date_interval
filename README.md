@@ -42,6 +42,31 @@ You can also define filters. Filters are applied in sequence, from left to right
 
 Beware that duplicated dates are removed from the final result. They're also sorted.
 
+Some expression examples:
+
+```text
+# Don't return weekends
+2014-01-01 - 2014-01-05, -weekends
+
+# Return only weekends
+2014-01-01 - 2014-01-05, none, +weekends
+
+# Don't return weekdays
+2014-01-01 - 2014-01-05, -weekdays
+
+# Return only weekdays
+2014-01-01 - 2014-01-05, none, +weekdays
+
+# Return mondays, wednesdays and fridays
+2014-01-01 - 2014-01-05, none, +monday, +wednesdays, +fridays
+
+# Return the specified range, including one more date
+2014-01-01 - 2014-01-05, +2014-07-31
+
+# Return the specified range, excluding one date
+2014-01-01 - 2014-01-05, -2014-01-05
+```
+
 ## Contributing
 
 1. Fork it ( http://github.com/[my-github-username]/date_interval/fork )
