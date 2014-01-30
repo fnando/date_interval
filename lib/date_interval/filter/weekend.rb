@@ -7,16 +7,16 @@ module DateInterval
         @operator = operator
       end
 
+      def filter(dates)
+        dates.select(&:weekend?)
+      end
+
       def negative(dates)
-        dates
-          .select(&:weekend?)
-          .each(&:remove!)
+        filter(dates).each(&:remove!)
       end
 
       def positive(dates)
-        dates
-          .select(&:weekend?)
-          .each(&:add!)
+        filter(dates).each(&:add!)
       end
     end
   end
