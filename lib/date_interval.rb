@@ -19,9 +19,6 @@ module DateInterval
   InvalidRuleError = Class.new(StandardError)
 
   def self.parse(expression)
-    parser = Parser.new
-    transformer = Transformer.new
-
     tree = parser.parse(expression)
     ast = transformer.apply(tree)
 
@@ -32,10 +29,18 @@ module DateInterval
   end
 
   def self.valid?(expression)
-    parser = Parser.new
     parser.parse(expression)
     return true
   rescue Parslet::ParseFailed
     return false
+  end
+
+  private
+  def self.parser
+    Parser.new
+  end
+
+  def self.transformer
+    Transformer.new
   end
 end
