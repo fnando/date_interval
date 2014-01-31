@@ -3,7 +3,7 @@ module DateInterval
     attr_reader :date
 
     extend Forwardable
-    def_delegator :date, :wday
+    def_delegators :date, :wday, :strftime
 
     def initialize(date)
       @date = date

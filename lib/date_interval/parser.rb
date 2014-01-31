@@ -40,12 +40,18 @@ module DateInterval
       filter_weekdays.as(:weekdays) |
       filter_weekend.as(:weekend)   |
       filter_none.as(:none)         |
-      filter_date.as(:date)
+      filter_date.as(:date)         |
+      filter_holidays.as(:holidays)
     }
 
     rule(:s?) { str("s").maybe }
 
-    rule(:filter_weekend)   {
+    rule(:filter_holidays) {
+      operator? >>
+      str("holiday") >> s?
+    }
+
+    rule(:filter_weekend) {
       operator? >>
       str("weekend") >> s?
     }

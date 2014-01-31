@@ -173,4 +173,22 @@ describe DateInterval do
 
     expect(interval).to eql(expected_interval)
   end
+
+  it "excludes holidays" do
+    DateInterval::Filter::Holidays.add Date.parse("2014-01-01")
+
+    interval = DateInterval.parse("2014-01-01 - 2014-01-02, -holidays")
+    expected_interval = [to_date("2014-01-02")]
+
+    expect(interval).to eql(expected_interval)
+  end
+
+  it "includes holidays" do
+    DateInterval::Filter::Holidays.add Date.parse("2014-01-01")
+
+    interval = DateInterval.parse("2014-01-01 - 2014-01-02, none, +holidays")
+    expected_interval = [to_date("2014-01-01")]
+
+    expect(interval).to eql(expected_interval)
+  end
 end

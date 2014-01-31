@@ -20,6 +20,10 @@ module DateInterval
       Filter::Weekdays.new(operator.to_s)
     }
 
+    rule(holidays: {operator: simple(:operator)}) {
+      Filter::Holidays.new(operator.to_s)
+    }
+
     rule(none: simple(:name)) {
       Filter::None.new
     }

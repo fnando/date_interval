@@ -45,6 +45,7 @@ You can also define filters. Filters are applied in sequence, from left to right
 - `[+-]weekends`: filter weekend dates
 - `[+-]weekdays`: filter weekdays ()
 - `[+-]sundays`: filter sundays. You can use any weekday name (sundays-saturdays)
+- `[+-]holidays`: filter holidays. You must add the holidays by yourself (see below)
 - `[+-]yyy-mm-dd`: add/remove the given date.
 
 Beware that duplicated dates are removed from the final result. They're also sorted.
@@ -72,6 +73,28 @@ Some expression examples:
 
 # Return the specified range, excluding one date
 2014-01-01 - 2014-01-05, -2014-01-05
+
+# Return the specified range, excluding holidays
+2014-01-01 - 2014-01-05, -holidays
+```
+
+### Defining holidays
+
+To define your holidays you must use the method `DateInterval::Filter::Holiday.add`. It accepts one or more dates.
+
+```ruby
+require "date_interval"
+
+DateInterval::Filter::Holidays.add(
+  Date.parse("2014-01-01"),
+  Date.parse("2014-12-25"),
+)
+
+DateInterval.parse("2014-01-01 - 2014-12-31, none, +holidays")
+# => [
+#     [0] #<Date: 2014-01-01>,
+#     [1] #<Date: 2014-12-25>
+#    ]
 ```
 
 ## Contributing
