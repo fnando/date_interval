@@ -191,4 +191,12 @@ describe DateInterval do
 
     expect(interval).to eql(expected_interval)
   end
+
+  it "detects expression as valid" do
+    expect(DateInterval).to be_valid("2014-01-01 - 2014-01-02")
+  end
+
+  it "detects expression as invalid" do
+    expect(DateInterval).not_to be_valid("invalid")
+  end
 end

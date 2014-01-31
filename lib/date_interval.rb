@@ -30,4 +30,12 @@ module DateInterval
       ast[:filters].kind_of?(Array) ? ast[:filters] : []
     )
   end
+
+  def self.valid?(expression)
+    parser = Parser.new
+    parser.parse(expression)
+    return true
+  rescue Parslet::ParseFailed
+    return false
+  end
 end

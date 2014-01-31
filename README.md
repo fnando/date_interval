@@ -97,6 +97,20 @@ DateInterval.parse("2014-01-01 - 2014-12-31, none, +holidays")
 #    ]
 ```
 
+### Validating expressions
+
+To validation if an expression is valid use the `DateInterval.valid?` method.
+
+```ruby
+require "date_interval"
+
+DateInterval.valid?("2014-01-01 - 2014-01-05")
+#=> true
+
+DateInterval.valid?("invalid")
+#=> false
+```
+
 ## Contributing
 
 1. Fork it ( http://github.com/fnando/date_interval/fork )
