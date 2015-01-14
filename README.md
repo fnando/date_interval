@@ -43,7 +43,7 @@ You can also define filters. Filters are applied in sequence, from left to right
 
 - `none`: return no dates. Useful for applying specific filters afterwards.
 - `[+-]weekends`: filter weekend dates
-- `[+-]weekdays`: filter weekdays ()
+- `[+-]weekdays`: filter weekdays
 - `[+-]sundays`: filter sundays. You can use any weekday name (sundays-saturdays)
 - `[+-]holidays`: filter holidays. You must add the holidays by yourself (see below)
 - `[+-]yyy-mm-dd`: add/remove the given date.
@@ -66,7 +66,7 @@ Some expression examples:
 2014-01-01 - 2014-01-05, none, +weekdays
 
 # Return mondays, wednesdays and fridays
-2014-01-01 - 2014-01-05, none, +monday, +wednesdays, +fridays
+2014-01-01 - 2014-01-05, none, +mondays, +wednesdays, +fridays
 
 # Return the specified range, including one more date
 2014-01-01 - 2014-01-05, +2014-07-31
@@ -99,7 +99,7 @@ DateInterval.parse("2014-01-01 - 2014-12-31, none, +holidays")
 
 ### Validating expressions
 
-To validation if an expression is valid use the `DateInterval.valid?` method.
+To validate if an expression is valid use the `DateInterval.valid?` method.
 
 ```ruby
 require "date_interval"
