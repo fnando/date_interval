@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "test_helper"
 
 class DateIntervalTest < Minitest::Test
@@ -9,7 +11,8 @@ class DateIntervalTest < Minitest::Test
   end
 
   test "parses multiple intervals" do
-    interval = DateInterval.parse("2014-01-01 - 2014-01-05, 2014-01-06 - 2014-01-10")
+    interval =
+      DateInterval.parse("2014-01-01 - 2014-01-05, 2014-01-06 - 2014-01-10")
     expected_interval = date_range("2014-01-01", "2014-01-10")
 
     assert_equal expected_interval, interval

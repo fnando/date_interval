@@ -1,7 +1,7 @@
 # DateInterval
 
-[![Build Status](https://travis-ci.org/fnando/date_interval.png?branch=master)](https://travis-ci.org/fnando/date_interval)
-[![Code Climate](https://codeclimate.com/github/fnando/date_interval.png)](https://codeclimate.com/github/fnando/date_interval)
+[![Build Status](https://travis-ci.org/fnando/date_interval.svg)](https://travis-ci.org/fnando/date_interval)
+[![Code Climate](https://codeclimate.com/github/fnando/date_interval.svg)](https://codeclimate.com/github/fnando/date_interval)
 
 Parse date intervals from strings.
 
@@ -21,7 +21,8 @@ Or install it yourself as:
 
 ## Usage
 
-You must always define at least one range at the beginning of the expression. The snippet below will return three dates objects.
+You must always define at least one range at the beginning of the expression.
+The snippet below will return three dates objects.
 
 ```ruby
 require "date_interval"
@@ -30,7 +31,8 @@ expr = "2014-01-01 - 2014-01-03"
 dates = DateInterval.parse(expr)
 ```
 
-You can provide as many intervals as you want. The following expression returns six date objects.
+You can provide as many intervals as you want. The following expression returns
+six date objects.
 
 ```ruby
 require "date_interval"
@@ -39,16 +41,20 @@ expr = "2014-01-01 - 2014-01-03, 2014-02-01 - 2014-02-03"
 dates = DateInterval.parse(expr)
 ```
 
-You can also define filters. Filters are applied in sequence, from left to right. The following filters are available:
+You can also define filters. Filters are applied in sequence, from left to
+right. The following filters are available:
 
 - `none`: return no dates. Useful for applying specific filters afterwards.
 - `[+-]weekends`: filter weekend dates
 - `[+-]weekdays`: filter weekdays
-- `[+-]sundays`: filter sundays. You can use any weekday name (sundays-saturdays)
-- `[+-]holidays`: filter holidays. You must add the holidays by yourself (see below)
+- `[+-]sundays`: filter sundays. You can use any weekday name
+  (sundays-saturdays)
+- `[+-]holidays`: filter holidays. You must add the holidays by yourself (see
+  below)
 - `[+-]yyy-mm-dd`: add/remove the given date.
 
-Beware that duplicated dates are removed from the final result. They're also sorted.
+Beware that duplicated dates are removed from the final result. They're also
+sorted.
 
 Some expression examples:
 
@@ -80,7 +86,8 @@ Some expression examples:
 
 ### Defining holidays
 
-To define your holidays you must use the method `DateInterval::Filter::Holiday.add`. It accepts one or more dates.
+To define your holidays you must use the method
+`DateInterval::Filter::Holiday.add`. It accepts one or more dates.
 
 ```ruby
 require "date_interval"

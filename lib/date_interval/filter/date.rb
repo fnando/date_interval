@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 module DateInterval
   module Filter
     class Date < Operator
       attr_reader :date, :operator
 
-      def initialize(date, operator)
+      def initialize(date, operator) # rubocop:disable Lint/MissingSuper
         @date = date
         @operator = operator
       end

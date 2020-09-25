@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "date"
 require "parslet"
 require "forwardable"
@@ -24,18 +26,17 @@ module DateInterval
 
     Filter.filter(
       ast[:intervals].flatten.uniq,
-      ast[:filters].kind_of?(Array) ? ast[:filters] : []
+      ast[:filters].is_a?(Array) ? ast[:filters] : []
     )
   end
 
   def self.valid?(expression)
     parser.parse(expression)
-    return true
+    true
   rescue Parslet::ParseFailed
-    return false
+    false
   end
 
-  private
   def self.parser
     Parser.new
   end

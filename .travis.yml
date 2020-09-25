@@ -4,9 +4,7 @@ cache: bundler
 before_install:
   - gem install bundler
 rvm:
-  - '2.3.0'
-  - '2.2'
-  - '2.1'
-  - '2.0'
+  - "2.7.1"
+  - "2.6.5"
 notifications:
   email: false

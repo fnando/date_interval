@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module DateInterval
   class Date
     attr_reader :date

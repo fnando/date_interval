@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module DateInterval
   module Filter
     class Holidays < Operator
@@ -11,7 +13,7 @@ module DateInterval
         @holidays ||= []
       end
 
-      def initialize(operator)
+      def initialize(operator) # rubocop:disable Lint/MissingSuper
         @operator = operator
       end
 
