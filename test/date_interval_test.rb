@@ -20,7 +20,8 @@ class DateIntervalTest < Minitest::Test
 
   test "filters all out" do
     interval = DateInterval.parse("2014-01-01 - 2014-01-05, none")
-    assert_equal [], interval
+
+    assert_empty interval
   end
 
   test "includes weekends" do

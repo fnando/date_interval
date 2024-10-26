@@ -9,14 +9,14 @@ module DateInterval
     end
 
     rule(:month) do
-      str("0") >> match("[1-9]") |
-        str("1") >> match("[0-2]")
+      (str("0") >> match("[1-9]")) |
+        (str("1") >> match("[0-2]"))
     end
 
     rule(:day) do
-      str("0") >> match("[1-9]") |
-        match("[12]") >> match("[0-9]") |
-        str("3") >> match("[01]")
+      (str("0") >> match("[1-9]")) |
+        (match("[12]") >> match("[0-9]")) |
+        (str("3") >> match("[01]"))
     end
 
     rule(:comma)              { str(",") >> space? }

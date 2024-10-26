@@ -1,7 +1,8 @@
 # DateInterval
 
-[![Build Status](https://travis-ci.org/fnando/date_interval.svg)](https://travis-ci.org/fnando/date_interval)
-[![Code Climate](https://codeclimate.com/github/fnando/date_interval.svg)](https://codeclimate.com/github/fnando/date_interval)
+[![Tests](https://github.com/fnando/browser/workflows/ruby-tests/badge.svg)](https://github.com/fnando/date_interval)
+[![Gem](https://img.shields.io/gem/v/date_interval.svg)](https://rubygems.org/gems/date_interval)
+[![Gem](https://img.shields.io/gem/dt/date_interval.svg)](https://rubygems.org/gems/date_interval)
 
 Parse date intervals from strings.
 
@@ -9,7 +10,7 @@ Parse date intervals from strings.
 
 Add this line to your application's Gemfile:
 
-    gem 'date_interval'
+    gem "date_interval"
 
 And then execute:
 
